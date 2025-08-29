@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Man Ltd. Moving Company Design System */
+
+@layer base {
+  :root {
+    /* Brand Colors - Man Ltd. Moving Company */
+    --deep-navy: 210 67% 21%;        /* #1A2B4C */
+    --bright-teal: 178 77% 41%;      /* #17BEBB */
+    --warm-charcoal: 0 0% 20%;       /* #333333 */
+    --soft-silver: 0 0% 95%;         /* #F2F2F2 */
+    --vibrant-coral: 4 100% 69%;     /* #FF6F61 */
+    
+    /* Background Colors */
+    --background: 0 0% 100%;
+    --foreground: var(--warm-charcoal);
+
+    /* Card Colors */
+    --card: 0 0% 100%;
+    --card-foreground: var(--warm-charcoal);
+
+    /* Primary Brand Colors */
+    --primary: var(--deep-navy);
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary Colors */
+    --secondary: var(--soft-silver);
+    --secondary-foreground: var(--warm-charcoal);
+
+    /* Accent Colors */
+    --accent: var(--bright-teal);
+    --accent-foreground: 0 0% 98%;
+
+    /* CTA Colors */
+    --cta: var(--vibrant-coral);
+    --cta-foreground: 0 0% 100%;
+
+    /* Muted Colors */
+    --muted: var(--soft-silver);
+    --muted-foreground: 0 0% 45%;
+
+    /* Border and Input */
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: var(--bright-teal);
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--deep-navy)), hsl(var(--deep-navy) / 0.8));
+    --gradient-cta: linear-gradient(135deg, hsl(var(--vibrant-coral)), hsl(var(--vibrant-coral) / 0.9));
+    --gradient-teal: linear-gradient(135deg, hsl(var(--bright-teal)), hsl(var(--bright-teal) / 0.8));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(var(--deep-navy) / 0.1), 0 2px 4px -1px hsl(var(--deep-navy) / 0.06);
+    --shadow-hover: 0 10px 15px -3px hsl(var(--deep-navy) / 0.1), 0 4px 6px -2px hsl(var(--deep-navy) / 0.05);
+    --shadow-coral: 0 4px 14px 0 hsl(var(--vibrant-coral) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  .font-heading {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-cta {
+    @apply bg-gradient-to-r from-[hsl(var(--vibrant-coral))] to-[hsl(var(--vibrant-coral)/0.9)] text-white font-semibold px-8 py-4 rounded-lg shadow-[var(--shadow-coral)] hover:scale-105 transition-transform duration-200;
+  }
+  
+  .btn-teal {
+    @apply bg-gradient-to-r from-[hsl(var(--bright-teal))] to-[hsl(var(--bright-teal)/0.8)] text-white font-semibold px-6 py-3 rounded-lg hover:scale-105 transition-transform duration-200;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-[hsl(var(--bright-teal))] text-[hsl(var(--bright-teal))] font-semibold px-6 py-3 rounded-lg hover:bg-[hsl(var(--bright-teal))] hover:text-white transition-colors duration-200;
+  }
+  
+  /* Card Styles */
+  .card-elevated {
+    @apply bg-white rounded-xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow duration-300;
+  }
+  
+  /* Hero Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  /* Animation Classes */
+  .fade-in-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .fade-in-up.animate {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .scale-hover {
+    @apply hover:scale-105 transition-transform duration-200;
+  }
+}
